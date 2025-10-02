@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\"C:\\Users\\Sahil\\.local\\bin\\uv.exe\" --version)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

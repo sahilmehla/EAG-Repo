@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Stock Price Alerts",
+  "version": "1.0",
+  "description": "Get Telegram alerts when stock prices reach your target levels",
+
+  "permissions": [
+    "storage",
+    "alarms",
+    "activeTab"
+  ],
+
+  "host_permissions": [
+    "https://api.polygon.io/*",
+    "https://api.telegram.org/*",
+    "https://query1.finance.yahoo.com/*",
+    "https://financialmodelingprep.com/*",
+    "https://api.twelvedata.com/*"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Stock Price Alerts"
+  }
+}

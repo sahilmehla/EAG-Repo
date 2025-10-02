@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            width: 350px;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .alert-list {
+            margin-top: 20px;
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+        }
+
+        .alert-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px;
+            background-color: #f5f5f5;
+            margin-bottom: 5px;
+            border-radius: 4px;
+        }
+
+        .delete-btn {
+            background-color: #ff4444;
+            color: white;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .status {
+            margin-top: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .status.success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .status.error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>📈 Stock Price Alerts</h2>
+    </div>
+
+    <div class="form-group">
+        <label for="telegramBotToken">Telegram Bot Token:</label>
+        <input type="text" id="telegramBotToken" placeholder="Enter your bot token">
+    </div>
+
+    <div class="form-group">
+        <label for="telegramChatId">Telegram Chat ID:</label>
+        <input type="text" id="telegramChatId" placeholder="Enter your chat ID">
+    </div>
+
+    <button id="saveTelegramSettings">Save Telegram Settings</button>
+
+    <div class="form-group" style="margin-top: 20px;">
+        <label for="stockSymbol">Stock Symbol:</label>
+        <input type="text" id="stockSymbol" placeholder="e.g., AAPL, TSLA, GOOGL">
+    </div>
+
+    <div class="form-group">
+        <label for="alertPrice">Alert Price ($):</label>
+        <input type="number" id="alertPrice" step="0.01" placeholder="e.g., 150.00">
+    </div>
+
+    <div class="form-group">
+        <label for="alertType">Alert Type:</label>
+        <select id="alertType">
+            <option value="above">Price goes above</option>
+            <option value="below">Price goes below</option>
+        </select>
+    </div>
+
+    <button id="addAlert">Add Alert</button>
+
+    <div class="alert-list">
+        <h3>Active Alerts:</h3>
+        <div id="alertsList"></div>
+    </div>
+
+    <div id="status" class="status" style="display: none;"></div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
